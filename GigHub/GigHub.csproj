@@ -200,13 +200,32 @@
     <Compile Include="Migrations\201902221734343_AddedForeignKeyPropertiesToGig.Designer.cs">
       <DependentUpon>201902221734343_AddedForeignKeyPropertiesToGig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902231554176_AddedNameToApplicationUser.cs" />
+    <Compile Include="Migrations\201902231554176_AddedNameToApplicationUser.Designer.cs">
+      <DependentUpon>201902231554176_AddedNameToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="ViewModels\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\ConfigureTwoFactorViewModel.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
+    <Compile Include="ViewModels\FactorViewModel.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gig.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
+    <Compile Include="ViewModels\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
+    <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\SendCodeViewModel.cs" />
+    <Compile Include="ViewModels\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
@@ -302,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902221734343_AddedForeignKeyPropertiesToGig.resx">
       <DependentUpon>201902221734343_AddedForeignKeyPropertiesToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902231554176_AddedNameToApplicationUser.resx">
+      <DependentUpon>201902231554176_AddedNameToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
