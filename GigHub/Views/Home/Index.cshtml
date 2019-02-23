@@ -1,4 +1,5 @@
-﻿@model IEnumerable<GigHub.Models.Gig>
+﻿
+@model IEnumerable<GigHub.Models.Gig>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -23,6 +24,34 @@
                     @gig.Genre.Name
                 </span>
             </div>
+            <div class="going">
+                <button data-gig-id="@gig.Id" class="btn btn-sm btn-default js-toggle-attendance">Going ?</button>
+                <button class="btn btn-sm btn-default">Follow</button>
+            </div>
         </li>
     }
 </ul>
+
+
+@section scripts 
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-attendance").click(function (e) {
+                var button = $(e.target);
+
+                $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Fail bro :(");
+                    })
+                    
+            });
+        });
+    </script>    
+}

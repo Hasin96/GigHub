@@ -79,8 +79,8 @@ h6,
 
 .btn {
     border-radius:9px;
-    font-size:17px;
-    padding: 7px 20px;
+    /*font-size:17px;
+    padding: 7px 20px;*/
 }
 
 /* Page specific styles */
@@ -131,4 +131,10 @@ ul.gigs > li .detail .artist {
 ul.gigs > li .detail .genre {
     font-size:16px;
 
+}
+
+ul.gigs > li .going {
+    position: absolute;
+    left: 132px;
+    top: 21px;
 }
