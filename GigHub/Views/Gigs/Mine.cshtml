@@ -3,7 +3,7 @@
     ViewBag.Title = "Mine";
 }
 
-<h2>My upcoming gigs</h2>
+<h1>My upcoming gigs</h1>
 
 <ul class="gigs voffset3">
     @foreach(var gig in Model)
@@ -24,6 +24,11 @@
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
+                <div class="actions">
+                    <a href="@Url.Action("Edit", "Gigs", new { id = gig.Id})">
+                        Edit
+                    </a>
+                </div>
             </div>
         </li>
     }

@@ -79,17 +79,17 @@ h6,
 
 .form-control {
     font-size:17px;
-    padding:20px 15px;
+    height:44px;
     border-radius:9px;
 }
 
 .btn {
     border-radius:9px;
-    /*font-size:17px;
-    padding: 7px 20px;*/
 }
 
 /* Page specific styles */
+
+/* Gigs View styles */
 
 ul.gigs {
     list-style: none;
@@ -144,6 +144,19 @@ ul.gigs > li .going {
     top: 21px;
 }
 
+/* Followees page styles */
+
 ul.followee {
     list-style:none;
+}
+
+/* My upcoming gigs page styles */
+
+ul.gigs > li .actions {
+    font-size:16px;
+    display:none;
+}
+
+ul.gigs > li:hover .actions {
+    display:block;
 }
