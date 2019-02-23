@@ -28,6 +28,12 @@ span.field-validation-error {
     font-weight: 700;
 }
 
+.voffset { margin-top: 2px; }
+.voffset1 { margin-top: 5px }
+.voffset2 { margin-top: 10px }
+.voffset3 { margin-top: 20px }
+.voffset4 { margin-top: 40px; }
+
 /* Bootstrap Overrides */
 .navbar-inverse {
     background-color: #FF4340;
@@ -92,7 +98,6 @@ ul.gigs {
 ul.gigs > li {
     position: relative;
     margin-bottom: 30px;
-    margin-top:30px;
 }
 
 ul.gigs > li .date {
