@@ -184,6 +184,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Dtos\FollowingDto.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Dtos\AttendanceDTO.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Migrations\201902231659421_AddAttendance.cs" />

@@ -26,7 +26,7 @@
             </div>
             <div class="going">
                 <button data-gig-id="@gig.Id" class="btn btn-sm btn-default js-toggle-attendance">Going ?</button>
-                <button class="btn btn-sm btn-default">Follow</button>
+                <button data-followee-id="@gig.Artist.Id" class="btn btn-sm btn-default js-toggle-follow">Follow</button>
             </div>
         </li>
     }
@@ -50,7 +50,21 @@
                     .fail(function () {
                         alert("Fail bro :(");
                     })
-                    
+            });
+
+            $(".js-toggle-follow").click(function (e) {
+                var button = $(e.target);
+
+                $.post("/api/followings", { followeeId: button.attr("data-followee-id") })
+                    .done(function () {
+                        button
+                            .removeClass("btn-default")
+                            .addClass("btn-primary")
+                            .text("Following");
+                    })
+                    .fail(function () {
+                        alert("Fail to follow bro :(");
+                    })
             });
         });
     </script>    
