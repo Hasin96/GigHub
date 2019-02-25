@@ -184,12 +184,24 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\GigsController.cs" />
     <Compile Include="Controllers\ArtistsController.cs" />
+    <Compile Include="Migrations\201902232232190_AddLogicalDeleteIsCanceledToGig.cs" />
+    <Compile Include="Migrations\201902232232190_AddLogicalDeleteIsCanceledToGig.Designer.cs">
+      <DependentUpon>201902232232190_AddLogicalDeleteIsCanceledToGig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902241754075_addNotificationClass.cs" />
+    <Compile Include="Migrations\201902241754075_addNotificationClass.Designer.cs">
+      <DependentUpon>201902241754075_addNotificationClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\NotificationType.cs" />
+    <Compile Include="Models\UserNotification.cs" />
     <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="Dtos\FollowingDto.cs" />
-    <Compile Include="Controllers\FollowingsController.cs" />
+    <Compile Include="Controllers\Api\FollowingsController.cs" />
     <Compile Include="Dtos\AttendanceDTO.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
+    <Compile Include="Controllers\Api\AttendancesController.cs" />
     <Compile Include="Migrations\201902231659421_AddAttendance.cs" />
     <Compile Include="Migrations\201902231659421_AddAttendance.Designer.cs">
       <DependentUpon>201902231659421_AddAttendance.cs</DependentUpon>
@@ -267,6 +279,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -358,6 +371,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902231814552_addFollowings.resx">
       <DependentUpon>201902231814552_addFollowings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902232232190_AddLogicalDeleteIsCanceledToGig.resx">
+      <DependentUpon>201902232232190_AddLogicalDeleteIsCanceledToGig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902241754075_addNotificationClass.resx">
+      <DependentUpon>201902241754075_addNotificationClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

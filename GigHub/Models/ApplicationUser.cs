@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
@@ -15,6 +16,7 @@ namespace GigHub.Models
         [StringLength(100)]
         public string Name { get; set; }
 
+        public ICollection<UserNotification> UserNotification { get; set; }
         public ICollection<Following> Followers { get; set; }
         public ICollection<Following> Followees { get; set; }
 
@@ -22,6 +24,7 @@ namespace GigHub.Models
         {
             Followers = new Collection<Following>();
             Followees = new Collection<Following>();
+            UserNotification = new Collection<UserNotification>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -30,6 +33,11 @@ namespace GigHub.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        public void Notify(Notification notification)
+        {
+            UserNotification.Add(new UserNotification(this, notification));
         }
     }
 }
