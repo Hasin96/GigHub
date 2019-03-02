@@ -29,9 +29,9 @@
             </div>
             <div class="detail">
                 <span class="artist">
-                    @gig.Artist.Name
+                    <a href=@Url.Action("Details","Gigs", new { id = gig.Id })>@gig.Artist.Name</a>
 
-                    @if  (gig.IsCanceled)
+                    @if (gig.IsCanceled)
                     {
                         <span class="label label-warning">
                             Canceled

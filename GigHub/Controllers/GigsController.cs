@@ -144,6 +144,33 @@ namespace GigHub.Controllers
 
         }
 
+        public ActionResult Details(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            // artist name
+            var information = _context.Gigs
+                .Include(g => g.Artist)
+                .Include(g => g.Attendances.Select(a => a.Attendee))
+                .FirstOrDefault(x => x.Id == id);
+
+            // gig data
+            // if the logged in user is going or not
+            var viewModel = new GigDetailsViewModel
+            {
+                Venue = information.Venue,
+                DateTime = information.DateTime,
+                Artist = information.Artist.Name,
+                IsAttending = information.Attendances.FirstOrDefault(a => a.Attendee.Id == userId) != null ? true : false,
+                IsFollowing = _context.Followings
+                                .Where(x => x.FollowerId == userId && x.FolloweeId == information.ArtistId)
+                                .FirstOrDefault() != null 
+                                ? true 
+                                : false
+            };
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Search(GigsViewModel viewModel)
         {

@@ -1,0 +1,19 @@
+﻿@model GigHub.ViewModels.GigDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>Details</h1>
+
+<h2>
+    @Model.Artist 
+    @if (Model.IsFollowing)
+{ <button class="btn btn-primary">Following</button> } 
+</h2>
+
+<p>Gig playing in @Model.Venue at @Model.DateTime</p>
+
+@if (Model.IsAttending)
+{
+    <p>You are attending this event</p>
+}
