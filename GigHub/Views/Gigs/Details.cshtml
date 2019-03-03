@@ -5,15 +5,30 @@
 
 <h1>Details</h1>
 
-<h2>
-    @Model.Artist 
-    @if (Model.IsFollowing)
-{ <button class="btn btn-primary">Following</button> } 
+<h2 id="followContainer">
+    @Model.Gig.Artist.Name
+    @if (Model.IsFollowing && User.Identity.IsAuthenticated)
+    {
+        <button data-followee-id="@Model.Gig.ArtistId" class="btn btn-sm btn-primary js-toggle-follow">Following</button>
+    }
+    else if(!Model.IsFollowing && User.Identity.IsAuthenticated)
+    {
+        <button data-followee-id="@Model.Gig.ArtistId" class="btn btn-sm btn-default js-toggle-follow">Follow artist</button>
+    }
 </h2>
 
-<p>Gig playing in @Model.Venue at @Model.DateTime</p>
+<p>Gig playing at @Model.Gig.Venue on @Model.Gig.DateTime.ToString("d MMM") at @Model.Gig.DateTime.ToString("HH:mm")</p>
 
-@if (Model.IsAttending)
+@if (Model.IsAttending && User.Identity.IsAuthenticated)
 {
     <p>You are attending this event</p>
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            FollowerController.init("#followContainer");
+        });
+    </script>
 }
